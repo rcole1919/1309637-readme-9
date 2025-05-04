@@ -28,7 +28,8 @@
       },
       "exclude": [
         "libs/user/authentication/*",
-        "libs/user/blog-user/*"
+        "libs/user/blog-user/*",
+        "libs/shared/data-access/*"
       ]
     },
     {
@@ -51,7 +52,8 @@
       "plugin": "@nx/js/typescript",
       "include": [
         "libs/user/authentication/*",
-        "libs/user/blog-user/*"
+        "libs/user/blog-user/*",
+        "libs/shared/data-access/*"
       ],
       "options": {
         "typecheck": {

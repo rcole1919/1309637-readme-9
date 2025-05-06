@@ -18,5 +18,13 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "../../libs/user/authentication/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/user/blog-user/tsconfig.lib.json"
+    }
   ]
 }

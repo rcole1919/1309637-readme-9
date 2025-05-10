@@ -7,8 +7,6 @@ export type { EntityFactory } from './types/entity-factory.interface';
 
 export {
     SALT_ROUNDS,
-    AUTH_USER_EXISTS,
-    AUTH_USER_NOT_FOUND,
-    AUTH_USER_PASSWORD_WRONG,
+    AUTH_USER_MESSAGE,
 } from './constants/user';
 export { ENTITY_NOT_FOUND } from './constants/common';

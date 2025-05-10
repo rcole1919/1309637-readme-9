@@ -24,7 +24,12 @@
           "configName": "tsconfig.lib.json",
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
-        }
+        },
+        "include": [
+          "libs/shared/data-access/*",
+          "libs/user/authentication/*",
+          "libs/user/blog-user/*"
+        ]
       }
     },
     {
@@ -43,5 +48,17 @@
         "targetName": "lint"
       }
     }
-  ]
+  ],
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    }
+  }
 }

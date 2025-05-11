@@ -1,1 +1,1 @@
-export * from './user-config-module/user-config.module';
+export { UserConfigModule } from './user-config-module/user-config.module';

@@ -1,35 +1,30 @@
 import { Logger } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { NestFactory } from '@nestjs/core';
+import { ConfigService } from '@nestjs/config';
+
 import { AppModule } from './app/app.module';
 
 const GLOBAL_PREFIX = 'spec';
-const PORT = process.env.PORT || '3000';
-
-const isDevelopment = process.env.NODE_ENV === 'development';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  // const globalPrefix = 'api';
-  // app.setGlobalPrefix(globalPrefix);
-  // const port = process.env.PORT || 3000;
-  // await app.listen(port);
   app.setGlobalPrefix(GLOBAL_PREFIX);
 
-  if (isDevelopment) {
-    const config = new DocumentBuilder()
-      .setTitle('User-service')
-      .setDescription('User-service description')
-      .setVersion('1.0')
-      .addTag('user')
-      .build();
+  const config = new DocumentBuilder()
+    .setTitle('User-service')
+    .setDescription('User-service description')
+    .setVersion('1.0')
+    .addTag('user')
+    .build();
 
-    const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup(GLOBAL_PREFIX, app, document);
-  }
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup(GLOBAL_PREFIX, app, document);
+  const configService = app.get(ConfigService);
+  const port = configService.get('application.port');
 
-  await app.listen(PORT);
-  Logger.log(`🚀 Application is running on: http://localhost:${PORT}/${GLOBAL_PREFIX}`);
+  await app.listen(port);
+  Logger.log(`🚀 Application is running on: http://localhost:${port}/${GLOBAL_PREFIX}`);
 }
 
 bootstrap();

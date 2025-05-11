@@ -3,7 +3,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 
-const GLOBAL_PREFIX = 'api';
+const GLOBAL_PREFIX = 'spec';
 const PORT = process.env.PORT || '3000';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
@@ -18,8 +18,8 @@ async function bootstrap() {
 
   if (isDevelopment) {
     const config = new DocumentBuilder()
-      .setTitle('User-сервис')
-      .setDescription('Описание User-сервиса')
+      .setTitle('User-service')
+      .setDescription('User-service description')
       .setVersion('1.0')
       .addTag('user')
       .build();

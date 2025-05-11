@@ -1,0 +1,40 @@
+{
+  "name": "@project/user-config",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@nestjs/common": "^10.0.2"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "dist/libs/user/user-config",
+          "tsConfig": "libs/user/user-config/tsconfig.lib.json",
+          "packageJson": "libs/user/user-config/package.json",
+          "main": "libs/user/user-config/src/index.ts",
+          "assets": [
+            "libs/user/user-config/*.md"
+          ]
+        }
+      }
+    }
+  }
+}

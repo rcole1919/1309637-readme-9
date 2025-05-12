@@ -19,6 +19,8 @@
     "bcrypt": "5.1.1",
     "@project/core": "0.0.1",
     "@nestjs/common": "^10.0.2",
-    "@project/data-access": "0.0.1"
+    "@project/data-access": "0.0.1",
+    "mongoose": "8.14.2",
+    "@nestjs/mongoose": "11.0.3"
   }
 }

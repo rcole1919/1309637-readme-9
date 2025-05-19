@@ -21,8 +21,6 @@ export {
 } from './constants/common';
 
 export {
-  MONGO_MIN_PORT,
-  MONGO_MAX_PORT,
-  DEFAULT_MONGO_PORT,
   MONGO_ENV_VALIDATION_MESSAGE,
+  MONGO_PORT,
 } from './constants/mongo';

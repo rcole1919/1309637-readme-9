@@ -3,6 +3,9 @@ export { Entity } from './base/entity';
 export { PostType } from './types/post-type.enum';
 
 export type { User } from './types/user.interface';
+export type { Post } from './types/post.interface';
+export type { Comment } from './types/comment.interface';
+export type { Like } from './types/like.interface';
 export type { AuthUser } from './types/auth-user.interface';
 export type { StorableEntity } from './types/storable-entity.interface';
 export type { EntityFactory } from './types/entity-factory.interface';

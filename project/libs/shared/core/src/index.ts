@@ -1,5 +1,7 @@
 export { Entity } from './base/entity';
 
+export { PostType } from './types/post-type.enum';
+
 export type { User } from './types/user.interface';
 export type { AuthUser } from './types/auth-user.interface';
 export type { StorableEntity } from './types/storable-entity.interface';

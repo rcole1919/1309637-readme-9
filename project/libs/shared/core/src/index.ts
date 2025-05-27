@@ -29,3 +29,5 @@ export {
   MONGO_ENV_VALIDATION_MESSAGE,
   MONGO_PORT,
 } from './constants/mongo';
+
+export { MAX_LIKES_LIMIT } from './constants/blog';

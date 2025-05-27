@@ -38,6 +38,9 @@
     },
     {
       "path": "./libs/blog/blog-models"
+    },
+    {
+      "path": "./libs/blog/blog-like"
     }
   ]
 }

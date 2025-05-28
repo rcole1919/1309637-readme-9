@@ -56,6 +56,7 @@
     "libs/shared/*",
     "libs/blog/blog-models",
     "libs/blog/blog-like",
-    "libs/blog/blog-comment"
+    "libs/blog/blog-comment",
+    "libs/blog/blog-post"
   ]
 }

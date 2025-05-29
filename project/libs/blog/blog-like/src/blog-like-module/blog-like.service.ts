@@ -3,6 +3,7 @@ import { Injectable, ConflictException, NotFoundException } from '@nestjs/common
 import { BlogLikeRepository } from './blog-like.repository';
 import { CreateLikeDTO } from '../dto/create-like.dto';
 import { BlogLikeEntity } from './blog-like.entity';
+import { BlogLikeFactory } from './blog-like.factory';
 
 @Injectable()
 export class BlogLikeService {
@@ -11,16 +12,16 @@ export class BlogLikeService {
   ) {}
 
   public async createLike(dto: CreateLikeDTO): Promise<BlogLikeEntity> {
-    const existslike = (await this.blogLikeRepository.find({
+    const existsLike = (await this.blogLikeRepository.find({
       postId: dto.postId,
       userId: dto.userId,
     })).at(0);
 
-    if (existslike) {
+    if (existsLike) {
       throw new ConflictException(`A like with the ${dto.postId} and ${dto.userId} already exists`);
     }
 
-    const newLike = new BlogLikeEntity(dto);
+    const newLike = BlogLikeFactory.createFromCreateLikeDTO(dto);
 
     await this.blogLikeRepository.save(newLike);
 

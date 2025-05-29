@@ -20,7 +20,7 @@ export class BlogCommentController {
 
   @Get('/:postId')
   @HttpCode(HttpStatus.OK)
-  public async show(@Param() postId: string) {
+  public async show(@Param('postId') postId: string) {
     const commentEntities = await this.blogCommentService.getComments(postId);
     const comments = commentEntities.map((entity) => entity?.toPOJO())
     return fillDTO(CommentRDO, comments);
@@ -28,7 +28,7 @@ export class BlogCommentController {
 
   @Delete('/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  public async delete(@Param() id: string) {
+  public async delete(@Param('id') id: string) {
     await this.blogCommentService.deleteComment(id);
   }
 }

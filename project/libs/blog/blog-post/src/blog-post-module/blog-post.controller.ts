@@ -56,7 +56,7 @@ export class BlogPostController {
 
   @Get('/:id')
   @HttpCode(HttpStatus.OK)
-  public async show(@Param() id: string) {
+  public async show(@Param('id') id: string) {
     const post = await this.blogPostService.getPost(id);
     switch (post?.type) {
       case $Enums.PostType.video:

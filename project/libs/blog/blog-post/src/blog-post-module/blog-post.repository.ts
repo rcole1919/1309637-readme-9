@@ -29,7 +29,7 @@ export class BlogPostRepository extends BasePostgresRepository<BlogPostEntity, B
           connect: [],
         },
         content: plainObject.content as Prisma.JsonObject,
-      }
+      },
     });
     entity.id = record.id;
   }

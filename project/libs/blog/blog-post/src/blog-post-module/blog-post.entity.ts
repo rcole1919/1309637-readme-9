@@ -33,6 +33,7 @@ export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
     this.updatedAt = post.updatedAt ?? new Date();
     this.userId = post.userId ?? undefined;
     this.tags = post.tags || [];
+    this.type = post.type;
     this.content = post.content as Prisma.JsonObject;
     this.comments = [];
     this.likes = [];

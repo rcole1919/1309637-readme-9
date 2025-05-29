@@ -10,6 +10,6 @@ import { BlogCommentController } from './blog-comment.controller';
   imports: [PrismaClientModule],
   providers: [BlogCommentFactory, BlogCommentService, BlogCommentRepository],
   controllers: [BlogCommentController],
-  exports: [BlogCommentService]
+  exports: [BlogCommentService, BlogCommentFactory]
 })
 export class BlogCommentModule {}

@@ -3,6 +3,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { BlogCommentRepository } from './blog-comment.repository';
 import { CreateCommentDTO } from '../dto/create-comment.dto';
 import { BlogCommentEntity } from './blog-comment.entity';
+import { BlogCommentFactory } from './blog-comment.factory';
 
 @Injectable()
 export class BlogCommentService {
@@ -11,8 +12,7 @@ export class BlogCommentService {
   ) {}
 
   public async createComment(dto: CreateCommentDTO): Promise<BlogCommentEntity> {
-    const newComment = new BlogCommentEntity(dto);
-
+    const newComment = BlogCommentFactory.createFromCreateCommentDTO(dto);
     await this.blogCommentRepository.save(newComment);
 
     return newComment;

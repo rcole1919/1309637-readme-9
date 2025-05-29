@@ -10,6 +10,6 @@ import { BlogLikeController } from './blog-like.controller';
   imports: [PrismaClientModule],
   providers: [BlogLikeFactory, BlogLikeService, BlogLikeRepository],
   controllers: [BlogLikeController],
-  exports: [BlogLikeService]
+  exports: [BlogLikeService, BlogLikeFactory]
 })
 export class BlogLikeModule {}

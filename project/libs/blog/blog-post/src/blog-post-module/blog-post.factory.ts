@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import crypto from 'node:crypto';
 
 import { BlogPost, EntityFactory } from '@project/core';
 import { BlogPostEntity } from './blog-post.entity';
@@ -15,9 +16,11 @@ export class BlogPostFactory implements EntityFactory<BlogPostEntity> {
     entity.content = JSON.stringify(dto.content);
     entity.userId = dto.userId;
     entity.tags = dto.tags;
+    entity.type = dto.type;
     entity.comments = [];
     entity.likes = [];
+    entity.id = crypto.randomUUID();
 
     return entity;
-  } 
+  }
 }

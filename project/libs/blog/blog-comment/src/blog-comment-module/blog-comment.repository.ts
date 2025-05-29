@@ -17,7 +17,7 @@ export class BlogCommentRepository extends BasePostgresRepository<BlogCommentEnt
   }
 
   public override async save(entity: BlogCommentEntity): Promise<void> {
-    const record = await this.client.like.create({
+    const record = await this.client.comment.create({
       data: { ...entity.toPOJO() }
     });
 

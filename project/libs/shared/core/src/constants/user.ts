@@ -14,3 +14,17 @@ export const AUTH_RESPONSE_MESSAGE = {
   USER_EXIST: 'User with the email already exists',
   USER_CREATED: 'The new user has been successfully created.',
 } as const;
+
+export const AUTH_VALIDATE_MESSAGE = {
+  EMAIL_NOT_VALID: 'The email is not valid',
+} as const;
+
+export const USER_NAME_LENGTH = {
+  MIN: 3,
+  MAX: 50,
+} as const;
+
+export const USER_PASSWORD_LENGTH = {
+  MIN: 6,
+  MAX: 12,
+} as const;

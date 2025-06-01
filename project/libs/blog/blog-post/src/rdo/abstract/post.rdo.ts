@@ -14,7 +14,7 @@ export abstract class PostRDO {
   @ApiProperty({
     type: 'string',
     description: 'User ID',
-    example: '134ce8babd-cc30-4805-9b12-d9420398e7c5',
+    example: '68360ce03db646c6fa89e8d5',
   })
   @Expose()
   public userId!: string;

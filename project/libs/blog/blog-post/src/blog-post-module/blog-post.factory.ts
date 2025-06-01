@@ -15,7 +15,7 @@ export class BlogPostFactory implements EntityFactory<BlogPostEntity> {
     const entity = new BlogPostEntity();
     entity.content = JSON.stringify(dto.content);
     entity.userId = dto.userId;
-    entity.tags = dto.tags;
+    entity.tags = dto.tags.map((tag) => tag.toLowerCase());
     entity.type = dto.type;
     entity.comments = [];
     entity.likes = [];

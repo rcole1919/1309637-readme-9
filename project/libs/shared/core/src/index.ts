@@ -16,6 +16,8 @@ export type { StorableEntity } from './types/storable-entity.interface';
 export type { EntityFactory } from './types/entity-factory.interface';
 export type { MongoConfig } from './types/mongo-config.interface';
 export type { ApplicationConfig } from './types/application-config.interface';
+export type { SortDirection } from './types/sort-direction.enum';
+export type { PaginationResult } from './types/pagination.interface';
 
 export {
   SALT_ROUNDS,

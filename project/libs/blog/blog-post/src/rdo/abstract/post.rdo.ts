@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from 'class-transformer';
 import { Comment, Like } from '@project/core';
+import { $Enums } from '@prisma/client';
 
 export abstract class PostRDO {
   @ApiProperty({
@@ -10,6 +11,30 @@ export abstract class PostRDO {
   })
   @Expose()
   public id!: string;
+
+  @ApiProperty({
+    type: 'string',
+    description: 'Repost ID',
+    example: '134ce8babd-cc30-4805-9b12-d9420398e7c5',
+  })
+  @Expose()
+  public repostId!: string;
+
+  @ApiProperty({
+    type: 'string',
+    description: 'Repost Author ID',
+    example: '68360ce03db646c6fa89e8d5',
+  })
+  @Expose()
+  public repostAuthorId!: string;
+
+  @ApiProperty({
+    type: 'string',
+    description: 'post type',
+    example: 'cite',
+  })
+  @Expose()
+  public type!: $Enums.PostType;
 
   @ApiProperty({
     type: 'string',

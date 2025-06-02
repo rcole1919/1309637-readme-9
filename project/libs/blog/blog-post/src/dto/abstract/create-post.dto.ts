@@ -3,7 +3,7 @@ import { ArrayMaxSize, ArrayUnique, IsMongoId } from 'class-validator';
 
 import { MAX_TAGS } from '@project/core';
 
-export abstract class PostDTO {
+export abstract class CreatePostDTO {
   @ApiProperty({
     type: 'string',
     description: 'User ID',

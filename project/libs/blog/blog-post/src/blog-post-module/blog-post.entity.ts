@@ -11,6 +11,9 @@ import { BlogCommentEntity, BlogCommentFactory } from '@project/blog-comment';
 export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
   public createdAt!: Date;
   public updatedAt!: Date;
+  public isPublished!: boolean;
+  public repostId!: string;
+  public repostAuthorId!: string;
   public userId!: string;
   public tags!: string[];
   public type!: $Enums.PostType;
@@ -31,6 +34,9 @@ export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
     this.id = post.id ?? '';
     this.createdAt = post.createdAt ?? new Date();
     this.updatedAt = post.updatedAt ?? new Date();
+    this.isPublished = post.isPublished ?? true;
+    this.repostId = post.repostId ?? '';
+    this.repostAuthorId = post.repostAuthorId ?? '';
     this.userId = post.userId ?? undefined;
     this.tags = post.tags || [];
     this.type = post.type;
@@ -56,6 +62,9 @@ export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
       id: this.id,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
+      isPublished: this.isPublished,
+      repostId: this.repostId,
+      repostAuthorId: this.repostAuthorId,
       userId: this.userId,
       type: this.type,
       content: this.content,

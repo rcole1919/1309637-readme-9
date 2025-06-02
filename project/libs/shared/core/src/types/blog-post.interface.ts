@@ -8,6 +8,9 @@ export interface BlogPost {
   type: $Enums.PostType;
   createdAt?: Date;
   updatedAt?: Date;
+  isPublished?: boolean;
+  repostId?: string;
+  repostAuthorId?: string;
   tags: string[];
   userId: string;
   content: Prisma.JsonValue;

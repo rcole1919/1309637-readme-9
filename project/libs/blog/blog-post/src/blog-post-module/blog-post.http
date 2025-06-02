@@ -5,14 +5,14 @@ Content-Type: application/json
 {
   "content": {
     "videoUrl": "some.mp4",
-    "title": "video title 3"
+    "title": "video title 5"
   },
   "userId": "682b65ff16b8e0b9712a916e",
-  "tags": ["video1", "video2"],
-  "type": "link"
+  "tags": ["video1", "video5"],
+  "type": "video"
 }
 
 ###
 
 # Get Post by id
-GET http://localhost:3000/api/posts/70caf823-52d3-4373-9b77-3b7384f67d7e HTTP/1.1
+GET http://localhost:3000/api/posts/f37e8fb5-1614-47f9-be97-173142e0bf62 HTTP/1.1

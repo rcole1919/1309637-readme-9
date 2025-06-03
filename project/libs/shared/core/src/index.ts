@@ -39,6 +39,7 @@ export {
 export {
   MONGO_ENV_VALIDATION_MESSAGE,
   MONGO_PORT,
+  BAD_MONGO_ID_ERROR,
 } from './constants/mongo';
 
 export {

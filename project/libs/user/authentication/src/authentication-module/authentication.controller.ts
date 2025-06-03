@@ -9,6 +9,7 @@ import { LoginUserDTO } from '../dto/login-user.dto';
 import { LoggedUserRDO } from '../rdo/logged-user.rdo';
 import { UserRDO } from '../rdo/user.rdo';
 import { AUTH_RESPONSE_MESSAGE } from '@project/core';
+import { MongoIdValidationPipe } from '@project/pipes';
 
 @ApiTags('authentication')
 @Controller('auth')
@@ -56,7 +57,7 @@ export class AuthenticationController {
     description: AUTH_RESPONSE_MESSAGE.USER_NOT_FOUND,
   })
   @Get(':id')
-  public async show(@Param('id') id: string) {
+  public async show(@Param('id', MongoIdValidationPipe) id: string) {
     const existUser = await this.authService.getUser(id);
     return fillDTO(UserRDO, existUser);
   }

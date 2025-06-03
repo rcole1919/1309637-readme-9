@@ -9,8 +9,8 @@ export interface BlogPost {
   createdAt?: Date;
   updatedAt?: Date;
   isPublished?: boolean;
-  repostId?: string;
-  repostAuthorId?: string;
+  repostId?: string | null;
+  repostAuthorId?: string | null;
   tags: string[];
   userId: string;
   content: Prisma.JsonValue;

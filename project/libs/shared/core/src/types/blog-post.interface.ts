@@ -14,6 +14,8 @@ export interface BlogPost {
   tags: string[];
   userId: string;
   content: Prisma.JsonValue;
-  likes: Like[];
-  comments: Comment[];
+  likes?: Like[];
+  comments?: Comment[];
+  likeCount?: number;
+  commentCount?: number;
 }

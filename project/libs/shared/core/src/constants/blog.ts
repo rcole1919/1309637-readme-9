@@ -1,3 +1,5 @@
+import { SortDirection } from '../types/sort-direction.enum';
+
 export const MAX_LIKES_LIMIT = 10;
 
 export const MAX_TAGS = 8;
@@ -47,3 +49,7 @@ export const COMMENT_TEXT_LENGTH = {
   MIN: 10,
   MAX: 300,
 } as const;
+
+export const DEFAULT_POST_COUNT_LIMIT = 25;
+export const DEFAULT_SORT_DIRECTION = SortDirection.Desc;
+export const DEFAULT_PAGE_COUNT = 1;

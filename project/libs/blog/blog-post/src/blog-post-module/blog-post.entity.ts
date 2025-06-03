@@ -19,7 +19,9 @@ export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
   public type!: $Enums.PostType;
   public content!: Prisma.JsonValue;
   public likes!: BlogLikeEntity[];
-  public comments!: BlogCommentEntity[]; 
+  public comments!: BlogCommentEntity[];
+  public likeCount!: number;
+  public commentCount!: number;
 
   constructor(post?: BlogPost) {
     super();
@@ -42,18 +44,24 @@ export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
     this.type = post.type;
     this.content = post.content as Prisma.JsonObject;
     this.comments = [];
+    this.commentCount = post.commentCount || 0;
     this.likes = [];
+    this.likeCount = post.likeCount || 0;
 
-    const blogCommentFactory = new BlogCommentFactory();
-    for (const comment of post.comments) {
-      const blogCommentEntity = blogCommentFactory.create(comment);
-      this.comments.push(blogCommentEntity)
+    if (post.comments) {
+      const blogCommentFactory = new BlogCommentFactory();
+      for (const comment of post.comments) {
+        const blogCommentEntity = blogCommentFactory.create(comment);
+        this.comments.push(blogCommentEntity)
+      }
     }
 
-    const blogLikeFactory = new BlogLikeFactory();
-    for (const like of post.likes) {
-      const blogLikeEntity = blogLikeFactory.create(like);
-      this.likes.push(blogLikeEntity)
+    if (post.likes) {
+      const blogLikeFactory = new BlogLikeFactory();
+      for (const like of post.likes) {
+        const blogLikeEntity = blogLikeFactory.create(like);
+        this.likes.push(blogLikeEntity)
+      }
     }
   }
 
@@ -70,6 +78,8 @@ export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
       content: this.content,
       comments: this.comments.map((entity) => entity.toPOJO()),
       likes: this.likes.map((entity) => entity.toPOJO()),
+      likeCount: this.likeCount,
+      commentCount: this.commentCount,
       tags: this.tags,
     }
   }

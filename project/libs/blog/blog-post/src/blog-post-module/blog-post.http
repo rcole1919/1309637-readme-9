@@ -8,7 +8,7 @@ Content-Type: application/json
     "title": "video title 5"
   },
   "userId": "682b65ff16b8e0b9712a916e",
-  "tags": ["video1", "video5"],
+  "tags": ["video1", "video1"],
   "type": "video"
 }
 
@@ -16,3 +16,8 @@ Content-Type: application/json
 
 # Get Post by id
 GET http://localhost:3000/api/posts/f37e8fb5-1614-47f9-be97-173142e0bf62 HTTP/1.1
+
+###
+
+# Get many posts
+GET http://localhost:3000/api/posts/ HTTP/1.1

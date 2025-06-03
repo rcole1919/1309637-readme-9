@@ -5,6 +5,8 @@ import { BlogPostRepository } from './blog-post.repository';
 import { BlogPostEntity } from './blog-post.entity';
 import { BlogPostFactory } from './blog-post.factory';
 import { CreatePostDTO } from '../dto/types/post-dto.type';
+import { BlogPostQuery } from './blog-post.query';
+import { PaginationResult } from '@project/core';
 
 @Injectable()
 export class BlogPostService {
@@ -16,6 +18,10 @@ export class BlogPostService {
     const newPost = BlogPostFactory.createFromCreatePostDTO(dto, type);
     await this.blogPostRepository.save(newPost);
     return newPost;
+  }
+
+  public async getAllPosts(query?: BlogPostQuery): Promise<PaginationResult<BlogPostEntity | null>> {
+    return this.blogPostRepository.find(query);
   }
 
   public async deletePost(id: string): Promise<void> {

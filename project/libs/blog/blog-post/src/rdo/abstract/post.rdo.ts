@@ -57,4 +57,10 @@ export abstract class PostRDO {
 
   @Expose()
   public likes!: Like[];
+
+  @Expose()
+  public likeCount!: number;
+
+  @Expose()
+  public commentCount!: number;
 }

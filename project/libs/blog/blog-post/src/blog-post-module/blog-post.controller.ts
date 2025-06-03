@@ -1,8 +1,11 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Query } from '@nestjs/common';
 import { $Enums } from '@prisma/client';
 import { BlogPostService } from './blog-post.service';
 import { blogPostRDOSelect } from './blog-post.rdo-select';
-import type { CreatePostDTO } from 'src/dto/types/post-dto.type';
+import type { CreatePostDTO } from '../dto/types/post-dto.type';
+import { BlogPostQuery } from './blog-post.query';
+import { PostWithPaginationRDO } from '../rdo/post-with-pagination.rdo';
+import { fillDTO } from '@project/helpers';
 
 @Controller('posts')
 export class BlogPostController {
@@ -18,6 +21,16 @@ export class BlogPostController {
   ) {
     const newPost = await this.blogPostService.createPost(dto, type);
     return blogPostRDOSelect(newPost, type);
+  }
+
+  @Get('/')
+  public async index(@Query() query: BlogPostQuery) {
+    const postsWithPagination = await this.blogPostService.getAllPosts(query);
+    const result = {
+      ...postsWithPagination,
+      entities: postsWithPagination.entities.map((post) => post?.toPOJO()),
+    }
+    return fillDTO(PostWithPaginationRDO, result);
   }
 
   @Get('/:id')

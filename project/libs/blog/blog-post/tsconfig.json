@@ -1,0 +1,28 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../../shared/data-access"
+    },
+    {
+      "path": "../blog-models"
+    },
+    {
+      "path": "../blog-comment"
+    },
+    {
+      "path": "../blog-like"
+    },
+    {
+      "path": "../../shared/core"
+    },
+    {
+      "path": "../../shared/helpers"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

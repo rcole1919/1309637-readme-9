@@ -1,6 +1,16 @@
 export { Entity } from './base/entity';
 
 export type { User } from './types/user.interface';
+export type { BlogPost } from './types/blog-post.interface';
+export type {
+  BlogPostCiteContent,
+  BlogPostLinkContent,
+  BlogPostPhotoContent,
+  BlogPostTextContent,
+  BlogPostVideoContent,
+} from './types/blog-post-content.type';
+export type { Comment } from './types/comment.interface';
+export type { Like } from './types/like.interface';
 export type { AuthUser } from './types/auth-user.interface';
 export type { StorableEntity } from './types/storable-entity.interface';
 export type { EntityFactory } from './types/entity-factory.interface';
@@ -21,8 +31,11 @@ export {
 } from './constants/common';
 
 export {
-  MONGO_MIN_PORT,
-  MONGO_MAX_PORT,
-  DEFAULT_MONGO_PORT,
   MONGO_ENV_VALIDATION_MESSAGE,
+  MONGO_PORT,
 } from './constants/mongo';
+
+export {
+  MAX_LIKES_LIMIT,
+  MAX_TAGS
+} from './constants/blog';

@@ -21,10 +21,13 @@
   ],
   "references": [
     {
-      "path": "../../libs/user/authentication/tsconfig.lib.json"
+      "path": "../../libs/blog/blog-post/tsconfig.lib.json"
     },
     {
-      "path": "../../libs/user/blog-user/tsconfig.lib.json"
+      "path": "../../libs/blog/blog-comment/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/blog/blog-like/tsconfig.lib.json"
     }
   ]
 }

@@ -9,9 +9,7 @@ import {
 
 import {
   MONGO_ENV_VALIDATION_MESSAGE,
-  DEFAULT_MONGO_PORT,
-  MONGO_MIN_PORT,
-  MONGO_MAX_PORT,
+  MONGO_PORT,
 } from '@project/core';
 
 export class MongoCongfiguration {
@@ -22,10 +20,10 @@ export class MongoCongfiguration {
   public host!: string;
 
   @IsNumber({}, { message: MONGO_ENV_VALIDATION_MESSAGE.DB_PORT_REQUIRED })
-  @Min(MONGO_MIN_PORT)
-  @Max(MONGO_MAX_PORT)
+  @Min(MONGO_PORT.MIN)
+  @Max(MONGO_PORT.MAX)
   @IsOptional()
-  public port: number = DEFAULT_MONGO_PORT;
+  public port: number = MONGO_PORT.DEFAULT;
 
   @IsString({ message: MONGO_ENV_VALIDATION_MESSAGE.DB_PASSWORD_REQUIRED })
   public password!: string;

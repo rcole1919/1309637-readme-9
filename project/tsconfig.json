@@ -35,6 +35,18 @@
     },
     {
       "path": "./libs/user/user-config"
+    },
+    {
+      "path": "./libs/blog/blog-models"
+    },
+    {
+      "path": "./libs/blog/blog-like"
+    },
+    {
+      "path": "./libs/blog/blog-comment"
+    },
+    {
+      "path": "./libs/blog/blog-post"
     }
   ]
 }

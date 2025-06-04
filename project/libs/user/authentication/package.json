@@ -20,6 +20,7 @@
     "@project/blog-user": "0.0.1",
     "@project/core": "0.0.1",
     "class-transformer": "^0.5.1",
-    "@nestjs/swagger": "8.1.1"
+    "@nestjs/swagger": "8.1.1",
+    "@project/helpers": "0.0.1"
   }
 }

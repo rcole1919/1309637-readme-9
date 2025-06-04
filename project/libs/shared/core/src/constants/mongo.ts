@@ -1,6 +1,8 @@
-export const MONGO_MIN_PORT = 0;
-export const MONGO_MAX_PORT = 65535;
-export const DEFAULT_MONGO_PORT = 27017;
+export const MONGO_PORT = {
+  MIN: 0,
+  MAX: 65535,
+  DEFAULT: 27017,
+} as const;
 
 export const MONGO_ENV_VALIDATION_MESSAGE = {
   DB_HOST_REQUIRED: 'MongoDB host is required',

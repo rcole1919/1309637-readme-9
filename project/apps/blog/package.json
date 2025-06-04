@@ -38,6 +38,47 @@
             "buildTarget": "@project/blog:build:production"
           }
         }
+      },
+      "dblint": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx prisma validate --schema ./prisma/schema.prisma",
+          "cwd": "libs/blog/blog-models"
+        }
+      },
+      "dbformat": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx prisma format --schema ./prisma/schema.prisma",
+          "cwd": "libs/blog/blog-models"
+        }
+      },
+      "dbmigrate": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx prisma migrate dev --schema ./prisma/schema.prisma --skip-generate --skip-seed",
+          "cwd": "libs/blog/blog-models"
+        }
+      },
+      "dbreset": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx prisma migrate reset --schema ./prisma/schema.prisma --skip-generate --skip-seed",
+          "cwd": "libs/blog/blog-models"
+        }
+      },
+      "dbgenerate": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx prisma generate --schema ./prisma/schema.prisma",
+          "cwd": "libs/blog/blog-models"
+        }
+      },
+      "dbseed": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx ts-node libs/blog/blog-models/prisma/seed.ts"
+        }
       }
     }
   }

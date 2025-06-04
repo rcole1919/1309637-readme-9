@@ -14,7 +14,9 @@ export abstract class BaseMongoRepository<
   ) {}
 
   protected createEntityFromDocument(document: DocumentType): T  {
-    const plainObject = document.toObject({ versionKey: false }) as ReturnType<T['toPOJO']>;
+    const POJO = document.toObject({ versionKey: false });
+    const documentId = String(document._id);
+    const plainObject = { id: documentId, ...POJO } as ReturnType<T['toPOJO']>;
     return this.entityFactory.create(plainObject);
   }
 

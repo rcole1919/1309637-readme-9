@@ -16,8 +16,10 @@ export type { StorableEntity } from './types/storable-entity.interface';
 export type { EntityFactory } from './types/entity-factory.interface';
 export type { MongoConfig } from './types/mongo-config.interface';
 export type { ApplicationConfig } from './types/application-config.interface';
+export type { PaginationResult } from './types/pagination.interface'
+export type { TokenPayload } from './types/token-payload.interface';
+export type { Token } from './types/token.interface';
 export { SortDirection } from './types/sort-direction.enum';
-export type { PaginationResult } from './types/pagination.interface';
 export { BlogPostSortType } from './types/blog-post-sort-type.enum';
 
 export {

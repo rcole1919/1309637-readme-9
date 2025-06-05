@@ -3,35 +3,42 @@ import { PostType, PrismaClient } from '@prisma/client';
 const FIRST_POST_UUID = '6d308040-96a2-4162-bea6-2338e9976540';
 const SECOND_POST_UUID = 'ab04593b-da99-4fe3-8b4b-e06d82e2efdd';
 
-const FIRST_USER_ID = '682b65ff16b8e0b9712a916e';
-const SECOND_USER_ID = '682f79ed695ed89f38fb76db';
+const POST_UUID = {
+  FIRST: '6d308040-96a2-4162-bea6-2338e9976540',
+  SECOND: 'ab04593b-da99-4fe3-8b4b-e06d82e2efdd',
+} as const;
+
+const USER_ID = {
+  FIRST: '682b65ff16b8e0b9712a916e',
+  SECOND: '682f79ed695ed89f38fb76db',
+} as const;
 
 function getPosts() {
   return [
     {
-      id: FIRST_POST_UUID,
-      userId: FIRST_USER_ID,
+      id: POST_UUID.FIRST,
+      userId: USER_ID.FIRST,
       tags: ['tag1', 'tag2', 'tag3'],
       type: PostType.video,
       content: {
         title: 'Видео пост',
         videoUrl: 'uploads/video1.mp4'
       },
-      likes: [{ userId: SECOND_USER_ID }],
+      likes: [{ userId: USER_ID.SECOND }],
       comments: [
         {
           message: 'Комментарий',
-          userId: SECOND_USER_ID,
+          userId: USER_ID.SECOND,
         },
         {
           message: 'Комментарий 2',
-          userId: SECOND_USER_ID,
+          userId: USER_ID.SECOND,
         },
       ],
     },
     {
-      id: SECOND_POST_UUID,
-      userId: SECOND_USER_ID,
+      id: POST_UUID.SECOND,
+      userId: USER_ID.SECOND,
       tags: ['tag1', 'tag5'],
       type: PostType.text,
       content: {
@@ -39,15 +46,15 @@ function getPosts() {
         teaser: 'Teaser',
         text: 'Lorem ipsum',
       },
-      likes: [{ userId: FIRST_USER_ID }],
+      likes: [{ userId: USER_ID.FIRST }],
       comments: [
         {
           message: 'Комментарий 5',
-          userId: FIRST_USER_ID,
+          userId: USER_ID.FIRST,
         },
         {
           message: 'Комментарий 6',
-          userId: FIRST_USER_ID,
+          userId: USER_ID.FIRST,
         },
       ]
     }

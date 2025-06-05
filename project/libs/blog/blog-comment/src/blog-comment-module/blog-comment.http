@@ -3,7 +3,7 @@ POST http://localhost:3000/api/comments HTTP/1.1
 Content-Type: application/json
 
 {
-  "message": "wedw333wefwefccwcwewewf",
+  "message": "Message",
   "userId": "682b65ff16b8e0b9712a916e",
-  "postId": "36a3d032-2b7e-4b13-85cd-c2386031b01d"
+  "postId": "81540bea-7686-4d66-a9a9-5bdeee4d2aaf"
 }

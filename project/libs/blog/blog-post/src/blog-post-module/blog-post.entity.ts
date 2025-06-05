@@ -16,7 +16,7 @@ export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
   public type!: $Enums.PostType;
   public content!: Prisma.JsonValue;
   public likes!: BlogLikeEntity[];
-  public comments!: BlogCommentEntity[]; 
+  public comments!: BlogCommentEntity[];
 
   constructor(post?: BlogPost) {
     super();
@@ -28,7 +28,9 @@ export class BlogPostEntity extends Entity implements StorableEntity<BlogPost> {
       return;
     }
 
-    this.id = post.id ?? '';
+    console.log(post.id);
+
+    this.id = post.id;
     this.createdAt = post.createdAt ?? new Date();
     this.updatedAt = post.updatedAt ?? new Date();
     this.userId = post.userId ?? undefined;

@@ -16,7 +16,7 @@ export class BlogLikeEntity extends Entity implements StorableEntity<Like> {
       return;
     }
 
-    this.id = like.id ?? '';
+    this.id = like.id;
     this.createdAt = like.createdAt ?? new Date();
     this.updatedAt = like.updatedAt ?? new Date();
     this.postId = like.postId ?? undefined;

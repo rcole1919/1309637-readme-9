@@ -17,7 +17,7 @@ export class BlogCommentEntity extends Entity implements StorableEntity<Comment>
       return;
     }
 
-    this.id = comment.id ?? '';
+    this.id = comment.id;
     this.createdAt = comment.createdAt ?? new Date();
     this.updatedAt = comment.updatedAt ?? new Date();
     this.postId = comment.postId ?? undefined;

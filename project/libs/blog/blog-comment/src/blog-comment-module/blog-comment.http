@@ -3,7 +3,7 @@ POST http://localhost:3000/api/comments HTTP/1.1
 Content-Type: application/json
 
 {
-  "message": "sdcns sidcno dwe",
+  "message": "Message",
   "userId": "682b65ff16b8e0b9712a916e",
-  "postId": "70caf823-52d3-4373-9b77-3b7384f67d7e"
+  "postId": "81540bea-7686-4d66-a9a9-5bdeee4d2aaf"
 }

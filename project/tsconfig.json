@@ -47,6 +47,9 @@
     },
     {
       "path": "./libs/blog/blog-post"
+    },
+    {
+      "path": "./libs/shared/pipes"
     }
   ]
 }

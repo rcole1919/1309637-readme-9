@@ -4,6 +4,12 @@
   "include": [],
   "references": [
     {
+      "path": "../user-config"
+    },
+    {
+      "path": "../../shared/pipes"
+    },
+    {
       "path": "../../shared/helpers"
     },
     {

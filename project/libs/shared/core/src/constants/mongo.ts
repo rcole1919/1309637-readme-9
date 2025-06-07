@@ -12,3 +12,5 @@ export const MONGO_ENV_VALIDATION_MESSAGE = {
   DB_PASSWORD_REQUIRED: 'MongoDB password is required',
   DB_AUTH_BASE_REQUIRED: 'MongoDB authentication base is required',
 } as const;
+
+export const BAD_MONGO_ID_ERROR = 'Bad entity ID';

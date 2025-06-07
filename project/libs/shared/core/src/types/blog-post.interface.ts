@@ -8,9 +8,14 @@ export interface BlogPost {
   type: $Enums.PostType;
   createdAt?: Date;
   updatedAt?: Date;
+  isPublished?: boolean;
+  repostId?: string | null;
+  repostAuthorId?: string | null;
   tags: string[];
   userId: string;
   content: Prisma.JsonValue;
-  likes: Like[];
-  comments: Comment[];
+  likes?: Like[];
+  comments?: Comment[];
+  likeCount?: number;
+  commentCount?: number;
 }

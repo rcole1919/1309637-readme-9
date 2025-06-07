@@ -16,11 +16,13 @@
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "@nestjs/common": "^10.0.2",
     "@project/blog-user": "0.0.1",
     "@project/core": "0.0.1",
     "class-transformer": "^0.5.1",
-    "@nestjs/swagger": "8.1.1",
-    "@project/helpers": "0.0.1"
+    "@project/helpers": "0.0.1",
+    "@project/pipes": "0.0.1",
+    "class-validator": "0.14.2",
+    "@nestjs/common": "^10.0.2",
+    "@nestjs/swagger": "8.1.1"
   }
 }

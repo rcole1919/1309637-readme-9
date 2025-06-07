@@ -1,12 +1,12 @@
-import { PostLinkDTO } from '../post-link.dto';
-import { PostCiteDTO } from '../post-cite.dto';
-import { PostPhotoDTO } from '../post-photo.dto';
-import { PostVideoDTO } from '../post-video.dto';
-import { PostTextDTO } from '../post-text.dto';
+import { CreatePostLinkDTO } from '../create-post-link.dto';
+import { CreatePostCiteDTO } from '../create-post-cite.dto';
+import { CreatePostPhotoDTO } from '../create-post-photo.dto';
+import { CreatePostVideoDTO } from '../create-post-video.dto';
+import { CreatePostTextDTO } from '../create-post-text.dto';
 
-export type PostDTO =
-  PostCiteDTO |
-  PostLinkDTO |
-  PostPhotoDTO |
-  PostVideoDTO |
-  PostTextDTO;
+export type CreatePostDTO =
+  CreatePostCiteDTO |
+  CreatePostLinkDTO |
+  CreatePostPhotoDTO |
+  CreatePostVideoDTO |
+  CreatePostTextDTO;

@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output = "../../../../node_modules/.prisma/client"
+  output   = "../../../../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -23,15 +23,18 @@ enum PostType {
 }
 
 model Post {
-  id        String    @id @default(uuid())
-  createdAt DateTime  @default(now()) @map("created_at")
-  updatedAt DateTime  @updatedAt @map("updated_at")
-  userId    String    @map("user_id")
-  tags      String[]  @default([])
-  content   Json
-  type      PostType
-  comments  Comment[]
-  likes     Like[]
+  id             String    @id @default(uuid())
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  isPublished    Boolean   @default(true) @map("is_published")
+  repostId       String?   @map("repost_id")
+  repostAuthorId String?   @map("repost_author_id")
+  userId         String    @map("user_id")
+  tags           String[]  @default([])
+  content        Json
+  type           PostType
+  comments       Comment[]
+  likes          Like[]
 
   @@map("posts")
 }

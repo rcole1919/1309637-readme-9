@@ -18,5 +18,13 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "../../libs/file-vault/file-uploader/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/file-vault/file-vault-config/tsconfig.lib.json"
+    }
   ]
 }

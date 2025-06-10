@@ -20,6 +20,8 @@ export type { FileVaultConfig } from './types/file-vault-config.interface';
 export type { PaginationResult } from './types/pagination.interface'
 export type { TokenPayload } from './types/token-payload.interface';
 export type { Token } from './types/token.interface';
+export type { File } from './types/file.interface';
+export type { StoredFile } from './types/stored-file.interface';
 export { SortDirection } from './types/sort-direction.enum';
 export { BlogPostSortType } from './types/blog-post-sort-type.enum';
 
@@ -62,3 +64,7 @@ export {
   DEFAULT_POST_COUNT_LIMIT,
   DEFAULT_SORT_DIRECTION,
 } from './constants/blog';
+
+export {
+  DATE_FORMAT,
+} from './constants/file';

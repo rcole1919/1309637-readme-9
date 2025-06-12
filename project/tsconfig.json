@@ -56,6 +56,12 @@
     },
     {
       "path": "./libs/file-vault/file-uploader"
+    },
+    {
+      "path": "./libs/notify/notify-config"
+    },
+    {
+      "path": "./libs/notify/email-subscriber"
     }
   ]
 }

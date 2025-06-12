@@ -1,0 +1,3 @@
+export const DEFAULT_RABBIT_PORT = 5672;
+
+export const DEFAULT_SERVICE_PORT = 3002;

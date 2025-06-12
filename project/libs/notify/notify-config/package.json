@@ -1,5 +1,5 @@
 {
-  "name": "@project/file-vault-config",
+  "name": "@project/notify-config",
   "version": "0.0.1",
   "private": true,
   "main": "./dist/index.js",
@@ -15,12 +15,6 @@
     }
   },
   "dependencies": {
-    "tslib": "^2.3.0",
-    "@nestjs/common": "^10.0.2",
-    "@nestjs/config": "4.0.2",
-    "joi": "17.13.3",
-    "@project/core": "0.0.1",
-    "@nestjs/mongoose": "11.0.3",
-    "@project/helpers": "0.0.1"
+    "tslib": "^2.3.0"
   }
 }

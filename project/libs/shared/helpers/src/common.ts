@@ -40,3 +40,17 @@ export function getMongoConnectionString({
 }): string {
   return `mongodb://${username}:${password}@${host}:${port}/${dbName}?authSource=${authDb}`;
 }
+
+export function getRabbitMQConnectionString({
+  user,
+  password,
+  host,
+  port,
+}: {
+  user: string;
+  password: string;
+  host: string;
+  port: string;
+}): string {
+  return `amqp://${user}:${password}@${host}:${port}`;
+}

@@ -22,6 +22,7 @@ export type { TokenPayload } from './types/token-payload.interface';
 export type { Token } from './types/token.interface';
 export type { File } from './types/file.interface';
 export type { StoredFile } from './types/stored-file.interface';
+export type { Subscriber } from './types/subscriber.interface';
 export { SortDirection } from './types/sort-direction.enum';
 export { BlogPostSortType } from './types/blog-post-sort-type.enum';
 

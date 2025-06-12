@@ -75,4 +75,5 @@ export {
 export {
   DEFAULT_RABBIT_PORT,
   DEFAULT_SERVICE_PORT,
+  SUBSCRIBER_VALIDATE_MESSAGE,
 } from './constants/notify';

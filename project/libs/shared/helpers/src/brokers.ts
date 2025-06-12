@@ -1,13 +1,14 @@
 import { ConfigService } from '@nestjs/config';
+import { RabbitMQConfig } from '@golevelup/nestjs-rabbitmq';
 
 import { getRabbitMQConnectionString } from './common';
 
 export function getRabbitMQOptions(optionSpace: string) {
   return {
-    useFactory: async (config: ConfigService) => ({
+    useFactory: async (config: ConfigService): Promise<RabbitMQConfig> => ({
       exchanges: [
         {
-          name: config.get<string>(`${optionSpace}.queue`),
+          name: config.get(`${optionSpace}.queue`) as string,
           type: 'direct',
         }
       ],

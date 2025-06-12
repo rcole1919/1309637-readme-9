@@ -62,6 +62,9 @@
     },
     {
       "path": "./libs/notify/email-subscriber"
+    },
+    {
+      "path": "./libs/user/user-notify"
     }
   ]
 }

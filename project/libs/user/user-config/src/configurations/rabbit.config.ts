@@ -1,7 +1,7 @@
 import { registerAs } from '@nestjs/config';
 import * as Joi from 'joi';
 
-import { DEFAULT_RABBIT_PORT, RADIX } from '@project/core';
+import { DEFAULT_NOTIFY_PORT, RADIX } from '@project/core';
 
 export interface RabbitConfig {
   host: string;
@@ -15,7 +15,7 @@ export interface RabbitConfig {
 const validationSchema = Joi.object({
   host: Joi.string().valid().hostname().required(),
   password: Joi.string().required(),
-  port: Joi.number().port().default(DEFAULT_RABBIT_PORT),
+  port: Joi.number().port().default(DEFAULT_NOTIFY_PORT.RABBIT),
   user: Joi.string().required(),
   queue: Joi.string().required(),
   exchange: Joi.string().required(),
@@ -32,7 +32,7 @@ function getConfig(): RabbitConfig {
   const config: RabbitConfig = {
     host: process.env.RABBIT_HOST as string,
     password: process.env.RABBIT_PASSWORD as string,
-    port: parseInt(process.env.RABBIT_PORT ?? DEFAULT_RABBIT_PORT.toString(), RADIX),
+    port: parseInt(process.env.RABBIT_PORT ?? DEFAULT_NOTIFY_PORT.RABBIT.toString(), RADIX),
     user: process.env.RABBIT_USER as string,
     queue: process.env.RABBIT_QUEUE as string,
     exchange: process.env.RABBIT_EXCHANGE as string,

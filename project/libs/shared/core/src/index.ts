@@ -73,7 +73,7 @@ export {
 } from './constants/file';
 
 export {
-  DEFAULT_RABBIT_PORT,
-  DEFAULT_SERVICE_PORT,
+  DEFAULT_NOTIFY_PORT,
   SUBSCRIBER_VALIDATE_MESSAGE,
+  EMAIL_ADD_SUBSCRIBER_SUBJECT,
 } from './constants/notify';

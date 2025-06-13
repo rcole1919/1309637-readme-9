@@ -9,7 +9,7 @@ import { UserNotifyService } from './user-notify.service';
   imports: [
     RabbitMQModule.forRootAsync(
       RabbitMQModule,
-      getRabbitMQOptions('rabbit'),
+      getRabbitMQOptions('application.rabbit'),
     ),
   ],
   providers: [UserNotifyService],

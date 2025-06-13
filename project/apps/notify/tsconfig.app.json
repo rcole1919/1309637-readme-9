@@ -18,5 +18,13 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "../../libs/notify/email-subscriber/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/notify/notify-config/tsconfig.lib.json"
+    }
   ]
 }

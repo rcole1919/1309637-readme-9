@@ -28,6 +28,16 @@ RABBIT_QUEUE=readme.notify.income - название очереди сервис
 
 RABBIT_EXCHANGE=readme.notify - название обменника сервиса
 
+MAIL_SMTP_HOST=localhost - хост smtp сервера
+
+MAIL_SMTP_PORT=25 - хост smtp сервера
+
+MAIL_USER_NAME=admin - имя smtp сервера
+
+MAIL_USER_PASSWORD=123456 - пароль smtp сервера
+
+MAIL_FROM=keks - имя отправителя
+
 PORT=3002 - Порт для входящих соединений
 
 NODE_ENV=development - Режим окружения

@@ -2,6 +2,7 @@ import { Controller } from '@nestjs/common';
 import { RabbitSubscribe } from '@golevelup/nestjs-rabbitmq';
 
 import { RabbitRouting } from '@project/core';
+import { getConfig } from '@project/notify-config';
 
 import { EmailSubscriberService } from './email-subscriber.service';
 import { CreateSubscriberDTO } from '../dto/create-subscriber.dto';
@@ -15,9 +16,9 @@ export class EmailSubscriberController {
   ) {}
 
   @RabbitSubscribe({
-    exchange: 'readme.notify',
+    exchange: getConfig().rabbit.exchange,
     routingKey: RabbitRouting.AddSubscriber,
-    queue: 'readme.notify.income',
+    queue: getConfig().rabbit.queue,
   })
   public async create(subscriber: CreateSubscriberDTO) {
     this.subscriberService.addSubscriber(subscriber);

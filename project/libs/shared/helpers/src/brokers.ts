@@ -8,7 +8,7 @@ export function getRabbitMQOptions(optionSpace: string) {
     useFactory: async (config: ConfigService): Promise<RabbitMQConfig> => ({
       exchanges: [
         {
-          name: config.get(`${optionSpace}.queue`) as string,
+          name: config.get(`${optionSpace}.exchange`) as string,
           type: 'direct',
         }
       ],

@@ -30,7 +30,7 @@ RABBIT_EXCHANGE=readme.notify - название обменника сервис
 
 MAIL_SMTP_HOST=localhost - хост smtp сервера
 
-MAIL_SMTP_PORT=25 - хост smtp сервера
+MAIL_SMTP_PORT=8025 - хост smtp сервера
 
 MAIL_USER_NAME=admin - имя smtp сервера
 

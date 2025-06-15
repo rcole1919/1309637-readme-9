@@ -16,11 +16,17 @@ export type { StorableEntity } from './types/storable-entity.interface';
 export type { EntityFactory } from './types/entity-factory.interface';
 export type { MongoConfig } from './types/mongo-config.interface';
 export type { ApplicationConfig } from './types/application-config.interface';
+export type { FileVaultConfig } from './types/file-vault-config.interface';
+export type { NotifyConfig } from './types/notify-config.interface';
 export type { PaginationResult } from './types/pagination.interface'
 export type { TokenPayload } from './types/token-payload.interface';
 export type { Token } from './types/token.interface';
+export type { File } from './types/file.interface';
+export type { StoredFile } from './types/stored-file.interface';
+export type { Subscriber } from './types/subscriber.interface';
 export { SortDirection } from './types/sort-direction.enum';
 export { BlogPostSortType } from './types/blog-post-sort-type.enum';
+export { RabbitRouting } from './types/rabbit-routing.enum';
 
 export {
   SALT_ROUNDS,
@@ -61,3 +67,13 @@ export {
   DEFAULT_POST_COUNT_LIMIT,
   DEFAULT_SORT_DIRECTION,
 } from './constants/blog';
+
+export {
+  DATE_FORMAT,
+} from './constants/file';
+
+export {
+  DEFAULT_NOTIFY_PORT,
+  SUBSCRIBER_VALIDATE_MESSAGE,
+  EMAIL_ADD_SUBSCRIBER_SUBJECT,
+} from './constants/notify';

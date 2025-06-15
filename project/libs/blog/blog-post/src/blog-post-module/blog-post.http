@@ -5,10 +5,10 @@ Content-Type: application/json
 {
   "content": {
     "videoUrl": "some.mp4",
-    "title": "video title 5"
+    "title": "Test UUID"
   },
   "userId": "682b65ff16b8e0b9712a916e",
-  "tags": ["video1", "video1"],
+  "tags": ["video1", "video2"],
   "type": "video"
 }
 

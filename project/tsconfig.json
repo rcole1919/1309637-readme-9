@@ -34,9 +34,6 @@
       "path": "./libs/user/user-config"
     },
     {
-      "path": "./libs/user/user-config"
-    },
-    {
       "path": "./libs/blog/blog-models"
     },
     {
@@ -50,6 +47,24 @@
     },
     {
       "path": "./libs/shared/pipes"
+    },
+    {
+      "path": "./apps/file-vault"
+    },
+    {
+      "path": "./libs/file-vault/file-vault-config"
+    },
+    {
+      "path": "./libs/file-vault/file-uploader"
+    },
+    {
+      "path": "./libs/notify/notify-config"
+    },
+    {
+      "path": "./libs/notify/email-subscriber"
+    },
+    {
+      "path": "./libs/user/user-notify"
     }
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "name": "@project/email-subscriber",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "class-validator": "0.14.2",
+    "@project/core": "0.0.1",
+    "@nestjs/common": "^10.0.2",
+    "@golevelup/nestjs-rabbitmq": "5.3.0",
+    "mongoose": "8.14.2",
+    "@nestjs/mongoose": "11.0.3",
+    "@project/helpers": "0.0.1",
+    "@project/data-access": "0.0.1",
+    "@nestjs-modules/mailer": "1.11.2",
+    "@nestjs/config": "4.0.2",
+    "@project/notify-config": "0.0.1"
+  }
+}

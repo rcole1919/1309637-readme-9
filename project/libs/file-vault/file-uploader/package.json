@@ -1,0 +1,36 @@
+{
+  "name": "@project/file-uploader",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "multer": "2.0.1",
+    "@nestjs/common": "^10.0.2",
+    "@nestjs/platform-express": "^10.0.2",
+    "@nestjs/config": "4.0.2",
+    "fs-extra": "11.2.0",
+    "@project/file-vault-config": "0.0.1",
+    "@project/pipes": "0.0.1",
+    "@project/helpers": "0.0.1",
+    "@project/core": "0.0.1",
+    "@nestjs/serve-static": "4.0.2",
+    "@nestjs/mongoose": "11.0.3",
+    "mongoose": "8.14.2",
+    "@project/data-access": "0.0.1",
+    "mime-types": "2.1.35",
+    "dayjs": "1.11.10",
+    "class-transformer": "^0.5.1"
+  }
+}

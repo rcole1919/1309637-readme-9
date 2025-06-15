@@ -4,6 +4,9 @@
   "include": [],
   "references": [
     {
+      "path": "../user-notify"
+    },
+    {
       "path": "../user-config"
     },
     {

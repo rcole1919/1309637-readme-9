@@ -4,7 +4,7 @@ import { Comment } from './comment.interface';
 import { Like } from './like.interface';
 
 export interface BlogPost {
-  id?: string;
+  id: string;
   type: $Enums.PostType;
   createdAt?: Date;
   updatedAt?: Date;

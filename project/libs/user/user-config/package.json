@@ -23,6 +23,7 @@
     "class-validator": "0.14.2",
     "@nestjs/common": "^10.0.2",
     "@project/helpers": "0.0.1",
-    "@nestjs/mongoose": "11.0.3"
+    "@nestjs/mongoose": "11.0.3",
+    "@nestjs/jwt": "10.2.0"
   }
 }

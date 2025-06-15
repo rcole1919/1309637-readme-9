@@ -11,6 +11,9 @@
   "include": ["src/**/*.ts"],
   "references": [
     {
+      "path": "../user-notify/tsconfig.lib.json"
+    },
+    {
       "path": "../user-config/tsconfig.lib.json"
     },
     {

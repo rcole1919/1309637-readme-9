@@ -1,0 +1,25 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../../shared/data-access"
+    },
+    {
+      "path": "../../shared/core"
+    },
+    {
+      "path": "../../shared/helpers"
+    },
+    {
+      "path": "../../shared/pipes"
+    },
+    {
+      "path": "../file-vault-config"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

@@ -23,6 +23,12 @@
     "@project/pipes": "0.0.1",
     "class-validator": "0.14.2",
     "@nestjs/common": "^10.0.2",
-    "@nestjs/swagger": "8.1.1"
+    "@nestjs/swagger": "8.1.1",
+    "@nestjs/jwt": "10.2.0",
+    "@nestjs/config": "4.0.2",
+    "@project/user-config": "0.0.1",
+    "@project/user-notify": "0.0.1",
+    "@nestjs/passport": "10.0.3",
+    "passport-jwt": "4.0.1"
   }
 }

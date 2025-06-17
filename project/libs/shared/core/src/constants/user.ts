@@ -13,6 +13,7 @@ export const AUTH_RESPONSE_MESSAGE = {
   USER_NOT_FOUND: 'User not found',
   USER_EXIST: 'User with the email already exists',
   USER_CREATED: 'The new user has been successfully created.',
+  GET_NEW_TOKEN: 'Get a new access/refresh tokens',
 } as const;
 
 export const AUTH_VALIDATE_MESSAGE = {
@@ -28,3 +29,5 @@ export const USER_PASSWORD_LENGTH = {
   MIN: 6,
   MAX: 12,
 } as const;
+
+export const USERNAME_FIELD_NAME = 'email';

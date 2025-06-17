@@ -24,4 +24,11 @@ export class LoggedUserRDO {
   })
   @Expose()
   public accessToken!: string;
+
+  @ApiProperty({
+    type: 'string',
+    description: 'Refresh token',
+  })
+  @Expose()
+  public refreshToken!: string;
 }

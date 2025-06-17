@@ -8,6 +8,8 @@ import { JwtAccessStrategy } from '../strategies/jwt-access.strategy';
 import { BlogUserModule } from '@project/blog-user';
 import { getJwtOptions } from '@project/user-config';
 import { UserNotifyModule } from '@project/user-notify';
+import { LocalStrategy } from '../strategies/local.strategy';
+import { JwtRefreshStrategy } from '../strategies/jwt-refresh.strategy';
 
 @Module({
   imports: [
@@ -19,6 +21,11 @@ import { UserNotifyModule } from '@project/user-notify';
     UserNotifyModule,
   ],
   controllers: [AuthenticationController],
-  providers: [AuthenticationService, JwtAccessStrategy],
+  providers: [
+    AuthenticationService,
+    JwtAccessStrategy,
+    LocalStrategy,
+    JwtRefreshStrategy,
+  ],
 })
 export class AuthenticationModule {}

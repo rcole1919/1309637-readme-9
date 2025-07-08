@@ -8,12 +8,15 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
+import { randomUUID } from 'node:crypto';
 import { JwtService } from '@nestjs/jwt';
 import type { ConfigType } from '@nestjs/config';
-import { AUTH_USER_MESSAGE, Token, TokenPayload, User } from '@project/core';
+import { AUTH_USER_MESSAGE, Token, User } from '@project/core';
 import { jwtConfig } from '@project/user-config';
+import { createJWTPayload } from '@project/helpers';
 
 import { BlogUserRepository, BlogUserEntity } from '@project/blog-user';
+import { RefreshTokenService } from '../refresh-token-module/refresh-token.service';
 import { CreateUserDTO } from '../dto/create-user.dto';
 import { LoginUserDTO } from '../dto/login-user.dto';
 
@@ -25,6 +28,7 @@ export class AuthenticationService {
     private readonly blogUserRepository: BlogUserRepository,
     private readonly jwtService: JwtService,
     @Inject(jwtConfig.KEY) private readonly jwtOptions: ConfigType<typeof jwtConfig>,
+    private readonly refreshTokenService: RefreshTokenService,
   ) {}
 
   public async register(dto: CreateUserDTO): Promise<BlogUserEntity> {
@@ -75,15 +79,18 @@ export class AuthenticationService {
   }
 
   public async createUserToken(user: User): Promise<Token> {
-    const payload: TokenPayload = {
-      sub: user.id || '',
-      email: user.email,
-      name: user.name,
-    };
+    // const payload: TokenPayload = {
+    //   sub: user.id || '',
+    //   email: user.email,
+    //   name: user.name,
+    // };
+    const accessTokenPayload = createJWTPayload(user);
+    const refreshTokenPayload = { ...accessTokenPayload, tokenId: randomUUID() };
+    await this.refreshTokenService.createRefreshSession(refreshTokenPayload);
 
     try {
-      const accessToken = await this.jwtService.signAsync(payload);
-      const refreshToken = await this.jwtService.signAsync(payload, {
+      const accessToken = await this.jwtService.signAsync(accessTokenPayload);
+      const refreshToken = await this.jwtService.signAsync(accessTokenPayload, {
         secret: this.jwtOptions.refreshTokenSecret,
         expiresIn: this.jwtOptions.refreshTokenExpiresIn,
       });

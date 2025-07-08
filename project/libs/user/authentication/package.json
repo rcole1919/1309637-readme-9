@@ -29,6 +29,11 @@
     "@project/user-config": "0.0.1",
     "@project/user-notify": "0.0.1",
     "@nestjs/passport": "10.0.3",
-    "passport-jwt": "4.0.1"
+    "passport-jwt": "4.0.1",
+    "@nestjs/mongoose": "11.0.3",
+    "mongoose": "8.14.2",
+    "@project/data-access": "0.0.1",
+    "dayjs": "1.11.10",
+    "passport-local": "1.0.0"
   }
 }

@@ -24,6 +24,7 @@ export type { TokenPayload } from './types/token-payload.interface';
 export type { Token } from './types/token.interface';
 export type { JwtToken } from './types/jwt-token.interface';
 export type { RefreshTokenPayload } from './types/refresh-token-payload.interface';
+export type { RequestWithTokenPayload } from './types/request-with-token-payload.interface';
 export type { File } from './types/file.interface';
 export type { StoredFile } from './types/stored-file.interface';
 export type { Subscriber } from './types/subscriber.interface';
@@ -85,3 +86,7 @@ export {
 export {
   TOKEN_EXPIRES_IN_REG,
 } from './constants/token';
+
+export {
+  INTERNAL_SERVER_ERROR_MESSAGE,
+} from './constants/api';

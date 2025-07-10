@@ -14,6 +14,7 @@ import { ApiTags, ApiResponse } from '@nestjs/swagger';
 import { fillDTO } from '@project/helpers';
 import { UserNotifyService } from '@project/user-notify';
 import { AUTH_RESPONSE_MESSAGE } from '@project/core';
+import type { RequestWithTokenPayload } from '@project/core';
 import { MongoIdValidationPipe } from '@project/pipes';
 
 import { AuthenticationService } from './authentication.service';
@@ -90,5 +91,11 @@ export class AuthenticationController {
   })
   public async refreshToken(@Req() { user }: RequestWithUser) {
     return this.authService.createUserToken(user);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('check')
+  public async checkToken(@Req() { user: payload }: RequestWithTokenPayload) {
+    return payload;
   }
 }
